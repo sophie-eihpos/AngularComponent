@@ -1,19 +1,21 @@
 <!doctype html>
-<html ng-app="myApp">
+<html ng-app="Guidebook">
 <head>
-	<title>Welcom to AnularJS</title>
+	
 	<script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular.js'></script>
-	<link rel="stylesheet" href="css/bootstrap.css">
+	<script src='Guidebook.js'></script>
+	<script scr='controller/ChapterController.js'></script>
+	<script scr='controller/NotesControllers.js'></script>
+	<script scr='model/NoteModel.js'></script>
+	<script scr='model/ChapterModel.js'></script>
+	<link rel="stylesheet" href="view/styles.css">
+	<title>AngularJS Starter Guidebook</title>
 </head>
 <body>
-	<h1>Hello, World.</h1>
+	<h1>Welcom to the AngularJS Starter Guidebook</h1>
 	
-	<p ng-controller='Clock'>
-		The current time is {{currentTime | date: 'h:mm:ss a'}}
-		<br/>
-		The current date is {{currentTime | date: 'M/d/yyyy'}}
-	<p>
-	<script type="text/javascript" src="lib/showdown.js"></script>
-	<script type="text/javascript" src="js/app.js"></script>
+	<div ng-view>
+		<!-- Views are added here at runtime. -->
+	</div>
 </body>
 </html>
