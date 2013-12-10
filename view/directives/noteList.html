@@ -1,7 +1,7 @@
-<ul class='notes' ng-show='chapter.id == selectedChapterId'>
-	<li ng-repeat='note in chapter.notes | orderBy:"id"' ng-class-even='"even"' ng-class-odd='"odd"'>
+<ul class='notes' ng-show='show'>
+	<li ng-repeat='note in chapter.notes | orderBy:orderValue' ng-class-even='"even"' ng-class-odd='"odd"'>
 		<div>#{{$index}}</div>
-		<div><a href ng-click='onDelete(note.id)'>delete</a></div>
+		<div><a ng-click='onDelete(note.id)'>delete</a></div>
 		<p>{{note.content}}</p>
 	</li>
 </ul>
