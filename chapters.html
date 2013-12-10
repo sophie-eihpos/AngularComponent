@@ -5,10 +5,8 @@
 		<p>
 			<a href='#/chapter/{{}chapter.id}'>
 				{{chapter.notes.length}}
-				<ng-switch on='chapter.notes.length'>
-					<span ng-switch-when='1'>note</span>
-					<span ng-switch-default> notes</span>
-				</ng-switch>
+				<ng-pluralize count='chapter.notes.length' when='{"1": "note", "other": "notes"}'>					
+				</ng-pluralize>
 			</a>
 
 			<a href='#/addNote/{{chapter.id}}'>add note</a>			
