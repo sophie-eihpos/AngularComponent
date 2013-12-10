@@ -1,18 +1,20 @@
 <ul>
 	<li ng-repeat='chapter in chapters | orderBy: "title"'>
-		<h2>{{chapter.title}}</h2>
+		<h2 id='{{$id}}'>{{chapter.title}}</h2>
 		<p>{{chapter.summary}}</p>
 		<p>
 			<a href='#/chapter/{{}chapter.id}'>
 				{{chapter.notes.length}}
-				<span ng-show='chapter.notes.length == 1'>note</span>
-				<span ng-hide='chapter.notes.length == 1'> notes</span>
+				<ng-switch on='chapter.notes.length'>
+					<span ng-switch-when='1'>note</span>
+					<span ng-switch-default> notes</span>
+				</ng-switch>
 			</a>
 
 			<a href='#/addNote/{{chapter.id}}'>add note</a>			
 		</p>
 		<ul class='notes' ng-show='chapter.id == selectedChapterId'>
-			<li ng-repeat='note in chapter.notes | orderBy: "id"'>
+			<li ng-repeat='note in chapter.notes | orderBy: "id"' ng-class-even='"even"' ng-class-odd='"odd"'>
 				<div>#{{$index}}</div>
 				<div><a href ng-click='onDelete(note.id)'>delete</a></div>
 				<p>{{note.content}}</p>
