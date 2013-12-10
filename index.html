@@ -1,17 +1,18 @@
 <!doctype html>
 <html ng-app="myApp">
 <head>
-	<title>Angular Componets</title>
-	
+	<title>Welcom to AnularJS</title>
+	<script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular.js'></script>
 	<link rel="stylesheet" href="css/bootstrap.css">
 </head>
 <body>
-	<markdown>	
-		# Hello World
-		- list item
-	</markdown>
-
-	<script type="text/javascript" src="lib/angular/angular.js"></script>
+	<h1>Hello, World.</h1>
+	
+	<p ng-controller='Clock'>
+		The current time is {{currentTime | date: 'h:mm:ss a'}}
+		<br/>
+		The current date is {{currentTime | date: 'M/d/yyyy'}}
+	<p>
 	<script type="text/javascript" src="lib/showdown.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>
 </body>

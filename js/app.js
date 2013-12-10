@@ -3,7 +3,11 @@ angular.module("myApp", [])
 		return{
 			restrict: 'E',
 			link: function(scrope, element, attrs){
-				element.html('<div>TEST Test</div>')
+				element.html('<div>Welcom to Angular</div>')
 			}
 		}
 	})
+
+function Clock($scope) {
+	$scope.currentTime = new Date();
+}
