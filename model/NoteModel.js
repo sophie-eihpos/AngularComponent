@@ -1,3 +1,4 @@
+//AngularJS provides three ways to define a model: as a service, as a factory, and as a provider.
 Guidebook.service('NoteModel', function() {
 	this.getNotesForChapter = function(chapterId) {
 		var chapter = JSON.parse(window.localStorage.getItem(chapterId));
